@@ -16,5 +16,3 @@ for line in lines:
     data.append(int_liste)
     
 print(data)
-
-#
