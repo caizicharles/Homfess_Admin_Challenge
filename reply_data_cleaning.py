@@ -5,7 +5,7 @@ Created on Tue Mar  7 23:23:56 2023
 @author: yannd
 """
 
-'''f = open('example.txt', 'r')
+f = open('example.txt', 'r')
 lines = f.readlines()
 data = []
 
@@ -15,8 +15,4 @@ for line in lines:
     int_liste = [int(idx) for idx in liste]
     data.append(int_liste)
     
-print(data)'''
-
-a = 1
-b = 2
-print(a + b)
+print(data)
