@@ -17,4 +17,3 @@ for line in lines:
     
 print(data)
 
-a = 1
