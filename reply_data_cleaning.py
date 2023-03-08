@@ -16,4 +16,8 @@ for line in lines:
     data.append(int_liste)
     
 print(data)
+<<<<<<< HEAD
 #this is printing
+=======
+    
+>>>>>>> origin/main
