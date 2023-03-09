@@ -16,10 +16,9 @@ def grid_to_df():
     df = pd.DataFrame(grid_array)
     return df
 
-data_df = grid_to_df()
-
-def initial_coordinate(df):
+def initial_coordinate():
     ''' returns coordinates (tuple) of each block we want to colour'''
+    df = grid_to_df()
     df_sum_col = df.sum(axis=1)
     
     max_col_idx = df_sum_col.idxmax()
@@ -30,10 +29,11 @@ def initial_coordinate(df):
     
     return [max_col_idx, max_row_idx]
 
-def next_block(df, prev_coord):
+def next_block(prev_coord):
     '''given a dataframe and the previous coordinate, returns the next coordinate
     which maximises the gains'''
     
+    df = grid_to_df()
     row_init, col_init = prev_coord
     
     ## Manually check the 4 squares around
@@ -46,8 +46,6 @@ def next_block(df, prev_coord):
         max_val = df.loc[row_init][total_cols-1]
         max_coord = [row_init, total_cols-1]
     
-    print(max_val)
-    
     # Check block right
     try:
         if df.loc[row_init][col_init+1] > max_val:
@@ -57,8 +55,6 @@ def next_block(df, prev_coord):
         if df.loc[row_init][0] > max_val:
             max_val = df.loc[row_init][0]
             max_coord = [row_init, 0]
-            
-    print(max_val)
             
     # Check block top
     try:
@@ -70,30 +66,26 @@ def next_block(df, prev_coord):
             max_val = df.loc[total_rows-1][col_init]
             max_coord = [total_rows-1, col_init]
             
-    print(max_val)
-            
     # Check block down
     try:
-        if df.loc[row_init-1][col_init] > max_val:
-            max_val = df.loc[row_init-1][col_init]
-            max_coord = [row_init-1, col_init]
+        if df.loc[row_init+1][col_init] > max_val:
+            max_val = df.loc[row_init+1][col_init]
+            max_coord = [row_init+1, col_init]
     except:
         if df.loc[0][col_init] > max_val:
             max_val = df.loc[0][col_init]
             max_coord = [0, col_init]
             
-    ## include overlap fct
-    
-    print(max_val)
-    
+    ## include overlap fct in each to choose
     return max_coord
 
-def record_path(df, snake_length):
+def record_path(snake_length):
+    df = grid_to_df()
     path = []
-    current_pos = initial_coordinate(df)
+    current_pos = initial_coordinate()
     for length in range(snake_length):
         path.append(current_pos)
-        current_pos = next_block(df, current_pos)
+        current_pos = next_block(current_pos)
         
     return path
         
