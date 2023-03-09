@@ -3,10 +3,10 @@ import reply_data_cleaning as rdc
 
 
 
-def grad_des_single(eta):
+def gradient_descent_single_update(eta):
     return None
 
-def update(iter_num = 20):
+def gradient_descent(iter_num = 20):
 
 
     return None
