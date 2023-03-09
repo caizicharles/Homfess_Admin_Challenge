@@ -35,28 +35,54 @@ def next_block(df, prev_coord):
     which maximises the gains'''
     
     row_init, col_init = prev_coord
-    print(row_init, col_init)
     max_val = 0
     max_val = df.loc[row_init][col_init]
     max_coord = prev_coord
     
     ## Manually check the 4 squares around
+    ## If time, code a function to make this more readable
     ## Set Block up as initial values
-    max_val = df.loc[row_init][col_init-1]
-    max_coord = [row_init][col_init-1]
+    try:
+        max_val = df.loc[row_init][col_init-1]
+        max_coord = [row_init, col_init-1]
+    except:
+        max_val = df.loc[row_init][total_cols-1]
+        max_coord = [row_init, total_cols-1]
     
     # Check block down
-    if df.loc[row_init][col_init+1] > max_val:
-        max_val = df.loc[row_init][col_init+1]
+    try:
+        if df.loc[row_init][col_init+1] > max_val:
+            max_val = df.loc[row_init][col_init+1]
+            max_coord = [row_init, col_init+1]
+    except:
+        if df.loc[row_init][0] > max_val:
+            max_val = df.loc[row_init][0]
+            max_coord = [row_init, 0]
+            
+    # Check block left
+    try:
+        if df.loc[row_init-1][col_init] > max_val:
+            max_val = df.loc[row_init-1][col_init]
+            max_coord = [row_init-1, col_init]
+    except:
+        if df.loc[total_rows-1][col_init] > max_val:
+            max_val = df.loc[total_rows-1][col_init]
+            max_coord = [total_rows-1, col_init]
+            
+    # Check block right
+    try:
+        if df.loc[row_init-1][col_init] > max_val:
+            max_val = df.loc[row_init-1][col_init]
+            max_coord = [row_init-1, col_init]
+    except:
+        if df.loc[0][col_init] > max_val:
+            max_val = df.loc[0][col_init]
+            max_coord = [0, col_init]
+            
+    ## include overlap fct
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    # return None
+    return max_coord
+
+
+   
     
