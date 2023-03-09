@@ -14,5 +14,5 @@ for i in range(0, S_num):
     each_snake = np.array(s)
     Snakes.append(each_snake)
 print(np.array(Snakes))
-print(Snakes[0])
+
 
