@@ -5,7 +5,7 @@ import numpy as np
 
 def overlap_checker():
     M = np.array([[]])
-    S = S_list[snake_counter]
+    S = snakes[snake_counter]
     coord = S[colour_counter]
     np.concatenate(M,coord)
 
