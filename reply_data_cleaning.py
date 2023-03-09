@@ -20,9 +20,18 @@ def input():
             except:
                 int_liste.append(-1)
         data.append(int_liste)
-    
-
     return data
+
+
+def overall_settings():
+    return input()[0]
+
+def snakes_length():
+    return input()[1]
+
+def grid():
+    return input()[2:]
+
 
 def output():
     
