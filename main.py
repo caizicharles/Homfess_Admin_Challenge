@@ -10,6 +10,7 @@ def main():
 
     R = input[0][0]
     C = input[0][1]
+    grid = np.array(input[2:])
     S_num = input[0][2]
     S_length = input[1]
     iter_num = 20
