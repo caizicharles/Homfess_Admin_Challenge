@@ -20,10 +20,12 @@ def pre_processing(S_num, S_length):
 def main():
     input = np.array(rdc.input())
 
+    #Map properties
     R = input[0][0]
     C = input[0][1]
     grid = np.array(input[2:])
 
+    #Snake properties
     S_num = input[0][2]
     S_length = input[1]
     Snakes = pre_processing(S_num, S_length)
@@ -31,6 +33,7 @@ def main():
     iter_num = 20
     #eta = 
 
+    path = col.
     
 
 
