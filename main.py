@@ -1,5 +1,8 @@
 import numpy as np
 import reply_data_cleaning as rdc
+import colouring as col
+import update as up
+import overlap_check as check
 
 def pre_processing(S_num, S_length):
     Snakes_list = []
@@ -24,7 +27,7 @@ def main():
     S_num = input[0][2]
     S_length = input[1]
     Snakes = pre_processing(S_num, S_length)
-    
+
     iter_num = 20
     #eta = 
 
