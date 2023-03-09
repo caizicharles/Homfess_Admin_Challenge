@@ -22,7 +22,6 @@ def input():
         data.append(int_liste)
     return data
 
-
 def overall_settings():
     return input()[0]
 
@@ -31,6 +30,7 @@ def snakes_length():
 
 def grid():
     return input()[2:]
+
 
 
 def output():
