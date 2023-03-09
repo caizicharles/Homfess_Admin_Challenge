@@ -6,7 +6,7 @@ Created on Tue Mar  7 23:23:56 2023
 """
 
 def input():
-    f = open('00-example.txt', 'r')
+    f = open('example.txt', 'r')
     lines = f.readlines()
     data = []
 
@@ -24,6 +24,9 @@ def input():
 
 def overall_settings():
     return input()[0]
+
+total_cols = input()[0][0]
+total_rows = input()[0][1]
 
 def snakes_length():
     return input()[1]
