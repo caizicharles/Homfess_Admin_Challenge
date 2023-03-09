@@ -6,7 +6,7 @@ Created on Tue Mar  7 23:23:56 2023
 """
 
 def input():
-    f = open('example.txt', 'r')
+    f = open('00-example.txt', 'r')
     lines = f.readlines()
     data = []
 

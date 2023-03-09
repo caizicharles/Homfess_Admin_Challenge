@@ -1,8 +1,8 @@
 import numpy as np
 import reply_data_cleaning as rdc
-import colouring as col
-import update as up
-import overlap_check as check
+#import colouring as col
+#import update as up
+#import overlap_check as check
 
 def pre_processing(S_num, S_length):
     Snakes_list = []
@@ -24,6 +24,7 @@ def main():
     R = input[0][0]
     C = input[0][1]
     grid = np.array(input[2:])
+    print(grid)
 
     #Snake properties
     S_num = input[0][2]
@@ -33,10 +34,9 @@ def main():
     iter_num = 20
     #eta = 
 
-    path = col.
     
 
 
     return None
 
-#main()
+main()
