@@ -1,9 +1,12 @@
 import numpy as np
 import colouring as col
 
-def score_for_single_snake(Snakes):
-    #col.record_path()
-    Snakes[]
+def score_for_single_snake(Snakes, S_length):
+    num = col.record_path(S_length)
+    length = len(Snakes[num])
+
+    for i in range(0, length):
+        
 
     return score
 
