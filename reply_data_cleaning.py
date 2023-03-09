@@ -13,9 +13,14 @@ def input():
     # Read and clean data
     for line in lines:
         liste = line.split()
-        int_liste = [int(idx) for idx in liste]
+        int_liste = []
+        for idx in liste:
+            try:
+                int_liste.append(int(idx))
+            except:
+                int_liste.append(-1)
         data.append(int_liste)
-        #print(data)
+    
 
     return data
 
